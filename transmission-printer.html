@@ -1,10 +1,9 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Transmission Printer</title>
+    <title>Jim's Transmission Printer</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -29,17 +28,16 @@
             padding: 10px;
             font-size: 16px;
             cursor: pointer;
-            margin-right: 10px;
         }
     </style>
 </head>
 <body>
 
-    <h1>Transmission Printer</h1>
+    <h1>Jim's Transmission Printer</h1>
     
-    <input type="text" id="inputString" placeholder="Paste the content of the transmission file here.">
+    <input type="text" id="inputString" placeholder="Paste the file here.">
     <button onclick="formatString()">Print It!</button>
-    <button onclick="copyToClipboard()">Copy Output to Clipboard</button>
+<button onclick="copyToClipboard()">Copy Output to Clipboard</button>
 
     <div id="output"></div>
 
@@ -48,10 +46,8 @@
             // Get the input string
             let input = document.getElementById('inputString').value;
             
-            // Replace every "><" with ">
-<"
-            let formattedString = input.replace(/></g, '>
-<');
+            // Replace every "><" with ">\n<"
+            let formattedString = input.replace(/></g, '>\n<');
             
             // Output the result
             document.getElementById('output').textContent = formattedString;
@@ -78,3 +74,4 @@
 
 </body>
 </html>
+
