@@ -1,0 +1,80 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String Formatter</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        #output {
+            white-space: pre-wrap;
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin-top: 20px;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            font-size: 16px;
+        }
+
+        button {
+            padding: 10px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>String Formatter</h1>
+    
+    <input type="text" id="inputString" placeholder="Enter a string">
+    <button onclick="formatString()">Format String</button>
+    <button onclick="copyToClipboard()">Copy to Clipboard</button>
+
+    <div id="output"></div>
+
+    <script>
+        function formatString() {
+            // Get the input string
+            let input = document.getElementById('inputString').value;
+            
+            // Replace every "><" with ">
+<"
+            let formattedString = input.replace(/></g, '>
+<');
+            
+            // Output the result
+            document.getElementById('output').textContent = formattedString;
+        }
+
+        function copyToClipboard() {
+            // Get the formatted string from the output div
+            let formattedString = document.getElementById('output').textContent;
+            
+            // Create a temporary textarea element to copy the text
+            let tempTextarea = document.createElement('textarea');
+            tempTextarea.value = formattedString;
+            
+            // Append the textarea to the body, copy the text, and remove the textarea
+            document.body.appendChild(tempTextarea);
+            tempTextarea.select();
+            document.execCommand('copy');
+            document.body.removeChild(tempTextarea);
+            
+            // Provide feedback to the user (optional)
+            alert('Formatted string copied to clipboard!');
+        }
+    </script>
+
+</body>
+</html>
