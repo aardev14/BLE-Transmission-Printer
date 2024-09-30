@@ -47,7 +47,7 @@
             let input = document.getElementById('inputString').value;
             
             // Replace every "><" with ">\n<"
-            let formattedString = input.replace(/></g, '>\n<');
+            let formattedString = input.replace(/>/g, '>\n');
             
             // Output the result
             document.getElementById('output').textContent = formattedString;
