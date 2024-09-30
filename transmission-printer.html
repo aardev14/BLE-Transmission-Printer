@@ -46,12 +46,13 @@
             // Get the input string
             let input = document.getElementById('inputString').value;
             
-            // Replace every "><" with ">\n<"
+            // Replace every ">" with ">\n"
             let formattedString = input.replace(/>/g, '>\n');
             
             // Output the result
             document.getElementById('output').textContent = formattedString;
         }
+
 
         function copyToClipboard() {
             // Get the formatted string from the output div
